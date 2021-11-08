@@ -1,0 +1,21 @@
+# Spring properties
+spring:  
+    # Database
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/buildingadmin"
+    username: buildingadmin
+    password: buildingadmin
+    
+server:
+  port: 9000
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
