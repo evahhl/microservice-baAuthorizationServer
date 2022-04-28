@@ -2,59 +2,22 @@ package com.nartan.ba.auth.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
 @ConfigurationProperties(prefix = "keycloak.server")
+
+@Data
+@NoArgsConstructor
 public class KeycloakServerProperties {
-
     String contextPath = "/auth";
-
-    String realmImportFile = "nartan-ba-realm.json";
-
+    String realmImportFile = "baeldung-realm.json";
     AdminUser adminUser = new AdminUser();
 
-    public String getContextPath() {
-        return contextPath;
-    }
-
-    public void setContextPath(String contextPath) {
-        this.contextPath = contextPath;
-    }
-
-    public AdminUser getAdminUser() {
-        return adminUser;
-    }
-
-    public void setAdminUser(AdminUser adminUser) {
-        this.adminUser = adminUser;
-    }
-
-    public String getRealmImportFile() {
-        return realmImportFile;
-    }
-
-    public void setRealmImportFile(String realmImportFile) {
-        this.realmImportFile = realmImportFile;
-    }
-
+    @Data
     public static class AdminUser {
-
         String username = "admin";
-
         String password = "admin";
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
     }
 }

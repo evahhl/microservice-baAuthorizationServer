@@ -19,7 +19,7 @@
     <description>Building Administration </description>
 
     <properties>
-        <java.version>13</java.version>
+        <java.version>16</java.version>
     </properties>
 
 </project>

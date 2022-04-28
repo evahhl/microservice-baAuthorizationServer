@@ -1,6 +1,8 @@
 package com.nartan.ba.auth.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.keycloak.Config;
+import org.keycloak.exportimport.ExportImportManager;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.representations.idm.RealmRepresentation;
 import org.keycloak.services.managers.ApplianceBootstrap;
@@ -15,6 +17,7 @@ import org.springframework.core.io.Resource;
 
 import java.util.NoSuchElementException;
 
+@Slf4j
 public class EmbeddedKeycloakApplication extends KeycloakApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(EmbeddedKeycloakApplication.class);
@@ -27,14 +30,22 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
             .orElseThrow(() -> new NoSuchElementException("No value present")));
     }
 
-    public EmbeddedKeycloakApplication() {
-
-        super();
-
+    @Override
+    protected ExportImportManager bootstrap() {
+        final ExportImportManager exportImportManager = super.bootstrap();
         createMasterRealmAdminUser();
-
         createNartanBaRealm();
+        return exportImportManager;
     }
+
+//    public EmbeddedKeycloakApplication() {
+//
+//        super();
+//
+//        createMasterRealmAdminUser();
+//
+//        createNartanBaRealm();
+//    }
 
     private void createMasterRealmAdminUser() {
 
@@ -80,5 +91,9 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
         }
 
         session.close();
+    }
+
+    static class RegularJsonConfigProviderFactory extends JsonConfigProviderFactory {
+
     }
 }

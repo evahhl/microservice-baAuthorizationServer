@@ -1108,9 +1108,6 @@
     "strictTransportSecurity" : "max-age=31536000; includeSubDomains"
   },
   "smtpServer" : { },
-  "accountTheme": "custom",
-  "loginTheme": "custom",
-  "welcomeTheme": "custom",
   "eventsEnabled" : false,
   "eventsListeners" : [ "jboss-logging" ],
   "enabledEventTypes" : [ ],
@@ -1205,19 +1202,19 @@
         "subComponents": {},
         "config": {
           "keystorePassword": [
-            "mypass"
+            "nartan"
           ],
           "keyAlias": [
-            "mytest"
+            "nartan-ba"
           ],
           "keyPassword": [
-            "mypass"
+            "nartan"
           ],
           "active": [
             "true"
           ],
           "keystore": [
-            "/Users/evahhl/git2/microservice-baAuthorizationServer/ba-authorization-server/src/main/resources/mytest.jks"
+            "/Users/evahhl/git2/nartan-ba/authorization-server/src/main/resources/nartan-ba.jks"
           ],
           "priority": [
             "101"
