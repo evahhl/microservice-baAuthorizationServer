@@ -1,0 +1,212 @@
+body{
+  background-color: #d0ccc9;
+  position: relative;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  color: white;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo{
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 2.5%;
+  float: left;
+}
+
+.avatar{
+  width: 3.5%;
+  float: left;
+  margin-right: 5px;
+}
+
+.menu{
+  float: left;
+}
+
+.breadcrumb{
+  background-color: #fff;
+  padding:0;
+}
+
+.navbar-text {
+  padding-top:0;
+  padding-bottom:0;
+}
+
+.nav{
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  
+}
+
+.white{
+  color: white;
+}
+
+.gray{
+  color: #343a40;
+  display: inline;
+}
+
+div .login{  
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;  
+}
+
+div .loginForm{
+  background-color: #fff;
+  border-color: #ebedee;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: .25rem;
+  width: 320px;
+  padding: 1rem!important;
+}
+
+.container{
+  width: 100%;
+  max-width: 100%;
+  color:#343a40;
+}
+
+.activity{
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  min-height: 400px;
+}
+
+.userinfo{
+  background-color: #f3f4f8;
+  height: 100%;
+  max-height: 98%; 
+}
+
+.newPost{
+  padding: .5rem;
+  border: 1px solid #ced4da;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-radius: .25rem;
+}
+
+.content{
+  max-width: 90%;
+  font-size: 12px;
+  height: 100%; 
+  max-height: 100%; 
+  word-break:break-all;
+}
+
+.leftrigthprofile{
+  max-width: 11%;
+  height: 50%;
+  margin-left: 1rem;
+  margin-right: 1rem;  
+  background-color: #e2e3e5;
+  border-radius: .25rem;
+  border: 1px solid #d6d8db;
+  padding: .75rem;
+}
+
+.forgot-password{
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: .002em;
+  text-align: left;
+}
+
+.marginBotton{
+  margin-bottom: .5rem;
+}
+
+.posts{
+  padding: 0.5rem;
+}
+
+.postDetails{
+  text-align: left;
+  background-color: #f1f2f4;  
+  justify-content: space-around;
+}
+
+
+.r-text-primary {
+  color: #0076cc!important;
+}
+
+.btn-secondary.comments {
+  background-color:transparent; 
+  border-color: #f1f2f4; 
+  color: #343a40;
+  padding:0;
+  border: none;
+}
+
+textarea.form-control.comments {
+  margin: .5rem;
+  width: 98%;
+}
+
+.btn-outline-danger {
+  border-color: #fff;
+}
+
+.borderError {
+  border: 1px solid red;
+}
+
+.error {
+  color: red;
+  text-align: left;
+  font-size: 13px;
+}
+
+.listComments {
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+div.listComments > .avatar{
+  width: 3%;
+  float: left;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

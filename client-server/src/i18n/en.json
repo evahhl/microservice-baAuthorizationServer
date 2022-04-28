@@ -1,0 +1,72 @@
+{
+    "buildingAdmin": "Building Admin",
+    "language": "Español",
+
+    "login.email": "Enter your email",
+    "login.password": "Enter your password",
+    "login.error": "Can not signin successfully ! Please check username/password again ",
+    "login.forgotPassword": "Forgot Password?",
+    "login.error.username":"Email required",
+    "login.error.invalid":"Email invalid",
+    "login.error.password":"Password required",
+    "login": "Login",
+    "unauthorized":"You are not authorized",
+
+    "menu.perfil": "Profile",
+    "menu.serviceRequests": "Service Requests",
+    "menu.administration": "Administration",
+    "menu.logout": "LogOut",
+    "menu.users": "Users",
+    "menu.buildings": "Buildings",
+    "menu.balance": "Balance",
+
+    "button.return":"Return",
+
+    "userPage.Signed": "Signed in as:",
+    "userPage.signIn": "Please sign in...",
+    "userPage.home": "Home",
+    "userPage.post": "Post",
+    "userPage.activity": "Activity",
+    "userPage.comment": "Comment",
+    "userPage.showMorePosts": "Show more posts",
+
+    "users.firstName": "First Name",
+    "users.LastName": "Last Name",
+    "users.email": "Email",
+    "users.phoneNumber": "Phone Number",
+    "users.mobileNumber": "Mobile Number",
+    "users.aparment": "Aparment",
+    "users.type": "Type",
+    "users.actions": "Actions",
+
+    "infoBalance.currentBalance": "Current Balance",
+    "infoBalance.serviceRequests": "Service Requests",
+    "infoBalance.viewDetails": "View details",
+
+    "footer.powered": "Powered by Nartan Systems",
+    "footer.terms": "Terms & Conditions",
+    "footer.privacy": "Privacy Policy",
+
+    "post.title": "Title:",
+    "post.description": "Description:",
+    "post.error.title": "Please enter title of this post",
+    "post.error.description": "Please enter description of this post",  
+    "post.error.comment": "Please enter a comment to this post",    
+    "post.error": "There was an error, please try again or ask for assistance ",
+    "post.new.ok": "The post has been registered",
+    "post.delete.confirm": "Are you sure to delete this post?",
+    "post.delete.ok": "The post has been deleted",
+    "post.comment.delete.confirm": "Are you sure to delete this comment?",
+    "post.comment.delete.ok": "The comment has been deleted",
+    "post.edit.confirm": "Are you sure to change this post?",
+    "post.edit.ok": "The post has been changed",
+    "post.comments": "Comments",
+
+
+    "button.cancel": "Cancel",
+    "button.post": "Submit",
+    "button.delete": "Delete",
+    "button.edit": "Edit",
+    "button.comment": "Comment"
+
+}

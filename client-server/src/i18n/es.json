@@ -1,0 +1,71 @@
+{
+    "buildingAdmin": "Administración de edificios",
+    "language": "English",
+   
+    "login.email": "Ingresa tu email",
+    "login.password": "Ingresa tu contraseña",
+    "login.error": "¡No se puede iniciar sesión correctamente! Vuelva a comprobar el nombre de usuario / contraseña ",
+    "login.forgotPassword": "¿Olvidaste tu contraseña?",
+    "login.error.username":"Email requerido",
+    "login.error.invalid":"Email inválido",
+    "login.error.password":"Contraseña requerida",
+    "login": "Iniciar",
+    "unauthorized":"No está autorizado",
+
+    "menu.perfil": "Perfil",
+    "menu.serviceRequests": "Solicitudes",
+    "menu.administration": "Administración",
+    "menu.logout": "Salir",
+    "menu.users": "Usuarios",
+    "menu.buildings": "Edificios",
+    "menu.balance": "Balance",
+
+    "button.return":"Regresar",
+
+    "userPage.Signed": "Logeado como:",
+    "userPage.signIn": "Favor de iniciar sesión...",
+    "userPage.home": "Inicio",
+    "userPage.post": "Anuncio",
+    "userPage.activity": "Comunicados",
+    "userPage.comment": "Comentario",
+    "userPage.showMorePosts": "Mostrar más",
+
+    "users.firstName": "Nombre",
+    "users.LastName": "Apellidos",
+    "users.email": "Email",
+    "users.phoneNumber": "Number telefónico",
+    "users.mobileNumber": "Celular",
+    "users.aparment": "Aparmento",
+    "users.type": "Tipo",
+    "users.actions": "Acciones",
+
+    "infoBalance.currentBalance": "Balance Actual",
+    "infoBalance.serviceRequests": "Solicitudes",
+    "infoBalance.viewDetails": "Ver detalles",
+
+    "footer.powered": "Realizado por Nartan Systems",                                                                                               
+    "footer.terms": "Terminos & Condiciones",
+    "footer.privacy": "Política de Privacidad",
+
+    "post.title": "Título:",
+    "post.description": "Descripción:",
+    "post.error.title": "Por favor ingrese el título del anuncio",
+    "post.error.description": "Por favor ingrese la descripción del anuncio",  
+    "post.error.comment": "Por favor ingrese un comentario a este anuncio",     
+    "post.error": "Hubo un error, por favor intente de nuevo o solicite asistencia ",
+    "post.new.ok": "El anuncio se ha dado de alta",
+    "post.delete.confirm": "¿Está seguro de borrar este anuncio?",
+    "post.delete.ok": "El anuncio se ha eliminado",
+    "post.comment.delete.confirm": "¿Está seguro de borrar este comentario?",
+    "post.comment.delete.ok": "El comentario se ha eliminado",
+    "post.edit.confirm": "¿Está seguro de modificar este anuncio?",
+    "post.edit.ok": "El anuncio se ha modificado",
+    "post.comments": "Comentarios",
+
+    "button.cancel": "Cancelar",
+    "button.post": "Publicar",
+    "button.delete": "Borrar",
+    "button.edit": "Modificar",
+    "button.comment": "Comentar"
+
+}
