@@ -2,5 +2,6 @@
 
 
 Authorization http://localhost:8083/auth,
-Resource http://localhost:8081/,
+Admin Resource http://localhost:8081/admin,
+Post Resource http://localhost:8082/post,
 Client http://localhost:8080/.
