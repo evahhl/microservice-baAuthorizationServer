@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface UserLoginService {
 
-  List<UserLogin> findAll();
+//  List<UserLogin> findAll();
 
   UserLogin findByEmail(String email);
 

@@ -1,6 +1,5 @@
-package com.nartan.ba.config;
+package com.nartan.ba.auth.config;
 
-import com.nartan.ba.config.KeycloakServerProperties.AdminUser;
 import org.keycloak.Config;
 import org.keycloak.models.KeycloakSession;
 import org.keycloak.representations.idm.RealmRepresentation;
@@ -20,10 +19,10 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(EmbeddedKeycloakApplication.class);
 
-    static com.nartan.ba.config.KeycloakServerProperties keycloakServerProperties;
+    static KeycloakServerProperties keycloakServerProperties;
 
     protected void loadConfig() {
-        JsonConfigProviderFactory factory = new com.nartan.ba.config.RegularJsonConfigProviderFactory();
+        JsonConfigProviderFactory factory = new RegularJsonConfigProviderFactory();
         Config.init(factory.create()
             .orElseThrow(() -> new NoSuchElementException("No value present")));
     }
@@ -43,7 +42,7 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
 
         ApplianceBootstrap applianceBootstrap = new ApplianceBootstrap(session);
 
-        AdminUser admin = keycloakServerProperties.getAdminUser();
+        KeycloakServerProperties.AdminUser admin = keycloakServerProperties.getAdminUser();
 
         try {
             session.getTransactionManager()

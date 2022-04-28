@@ -1,5 +1,7 @@
 server:
-  port: 8090
+  port: 8081
+  servlet:
+    context-path: /resource-server
 
 logging:
   level:
@@ -9,8 +11,20 @@ logging:
     org.springframework.security.oauth2: INFO
 
 spring:
+  # Database
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/buildingadmin"
+    username: buildingadmin
+    password: buildingadmin
+    driver-class-name: org.postgresql.Driver
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9000
+          issuer-uri: http://localhost:8083/auth/realms/nartan-ba
+
+

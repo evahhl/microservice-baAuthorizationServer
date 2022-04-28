@@ -1,4 +1,4 @@
-package com.nartan.ba.config;
+package com.nartan.ba.auth.config;
 
 import org.jboss.resteasy.plugins.server.servlet.HttpServlet30Dispatcher;
 import org.jboss.resteasy.plugins.server.servlet.ResteasyContextParameters;

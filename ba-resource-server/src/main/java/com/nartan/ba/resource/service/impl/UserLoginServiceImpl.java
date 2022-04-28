@@ -4,6 +4,7 @@ import com.nartan.ba.resource.model.UserLogin;
 import com.nartan.ba.resource.repository.UserLoginRepository;
 import com.nartan.ba.resource.service.UserLoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,10 +18,10 @@ public class UserLoginServiceImpl implements UserLoginService {
   @Autowired
   private UserLoginRepository repository;
 
-  @Override
-  public List<UserLogin> findAll() {
-    return repository.findAll();
-  }
+//  @Override
+//  public List<UserLogin> findAll(Pageable pageable) {
+//    return repository.findAll();
+//  }
 
   @Override
   public void add(final UserLogin userLogin) {

@@ -1,4 +1,4 @@
-package com.nartan.ba.config;
+package com.nartan.ba.auth.config;
 
 import org.jboss.resteasy.core.Dispatcher;
 import org.jboss.resteasy.spi.ResteasyProviderFactory;

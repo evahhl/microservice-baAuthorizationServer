@@ -1,4 +1,4 @@
-package com.nartan.ba.config;
+package com.nartan.ba.auth.config;
 
 import org.keycloak.common.ClientConnection;
 import org.keycloak.services.filters.AbstractRequestFilter;
