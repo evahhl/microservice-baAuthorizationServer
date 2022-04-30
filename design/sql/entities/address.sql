@@ -1,6 +1,6 @@
 -- Table: public.address
 
--- DROP TABLE IF EXISTS public.address CASCADE;
+DROP TABLE IF EXISTS public.address CASCADE;
 
 CREATE TABLE public.address
 (
@@ -14,27 +14,27 @@ CREATE TABLE public.address
     city_id integer NOT NULL,
     state_id integer NOT NULL,
     country_id integer NOT NULL,
-    CONSTRAINT address_pkey PRIMARY KEY (id),
+    CONSTRAINT address_pk PRIMARY KEY (id),
     CONSTRAINT address_municipality_fk FOREIGN KEY (municipality_id)
-        REFERENCES public.cat_municipality(id)
+        REFERENCES public.municipality(id)
     MATCH SIMPLE
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
     NOT DEFERRABLE,
     CONSTRAINT address_city_fk FOREIGN KEY (city_id)
-        REFERENCES public.cat_city(id)
+        REFERENCES public.city(id)
         MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         NOT DEFERRABLE,
     CONSTRAINT address_state_fk FOREIGN KEY (state_id)
-        REFERENCES public.cat_state(id)
+        REFERENCES public.state(id)
         MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
         NOT DEFERRABLE,
     CONSTRAINT address_country_fk FOREIGN KEY (country_id)
-        REFERENCES public.cat_country(id)
+        REFERENCES public.country(id)
         MATCH SIMPLE
         ON DELETE NO ACTION
         ON UPDATE NO ACTION
@@ -43,7 +43,7 @@ CREATE TABLE public.address
     INHERITS (base_timestamps)
     TABLESPACE pg_default;
 
-CREATE TRIGGER address_mod_time_trg_upd BEFORE UPDATE
+CREATE TRIGGER address_time_trg_upd BEFORE UPDATE
     ON public.address FOR EACH ROW
     EXECUTE PROCEDURE update_modification_time();
 

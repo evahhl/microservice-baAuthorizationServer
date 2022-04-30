@@ -1,6 +1,6 @@
 -- Table: public.apartment
 
--- DROP TABLE IF EXISTS public.apartment CASCADE;
+DROP TABLE IF EXISTS public.apartment CASCADE;
 
 CREATE TABLE public.apartment
 (
@@ -21,9 +21,9 @@ CREATE TABLE public.apartment
     INHERITS (base_timestamps)
     TABLESPACE pg_default;
 
-CREATE TRIGGER apartment_mod_time_trg_upd BEFORE UPDATE
+CREATE TRIGGER apartment_time_trg_upd BEFORE UPDATE
     ON public.apartment FOR EACH ROW
     EXECUTE PROCEDURE update_modification_time();
 
-ALTER TABLE IF EXISTS public.apartment
+ALTER TABLE public.apartment
     OWNER to buildingadmin;
