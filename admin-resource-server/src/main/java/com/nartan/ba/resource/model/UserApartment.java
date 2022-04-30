@@ -33,7 +33,7 @@ public class UserApartment implements Serializable {
   private String apartmentNumber;
 
   @OneToOne
-  @JoinColumn(name = "building_id", referencedColumnName = "building_id", nullable = false)
+  @JoinColumn(name = "building_id", referencedColumnName = "id", nullable = false)
   private Building building;
 
   @Column(name = "date_created", nullable = false, updatable = false)

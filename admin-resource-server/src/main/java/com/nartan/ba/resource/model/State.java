@@ -32,7 +32,7 @@ public class State implements Serializable {
     protected Timestamp modificationTime;
 
     @OneToOne
-    @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false, columnDefinition = "int default 1")
+    @JoinColumn(name = "country_id", referencedColumnName = "id", nullable = false, columnDefinition = "int default 1")
     private Country countryId;
 
     public int getId() {

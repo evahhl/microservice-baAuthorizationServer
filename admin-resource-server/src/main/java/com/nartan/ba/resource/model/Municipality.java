@@ -20,10 +20,8 @@ public class Municipality implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "municipality_gen")
-  @SequenceGenerator(name = "municipality_gen", sequenceName = "municipality_seq", allocationSize = 1)
-  @Column(name = "municipality_id", nullable = false, unique = true)
-  protected int municipalityId;
+  @Column(name = "id", nullable = false, unique = true)
+  protected int id;
 
   @Column(name = "municipality_name", nullable = false)
   protected String municipalityName;
@@ -42,12 +40,12 @@ public class Municipality implements Serializable {
   @UpdateTimestamp
   protected Timestamp dateModified;
 
-  public int getMunicipalityId() {
-    return municipalityId;
+  public int getId() {
+    return id;
   }
 
-  public void setMunicipalityId(int municipalityId) {
-    this.municipalityId = municipalityId;
+  public void setId(int id) {
+    this.id = id;
   }
 
   public String getMunicipalityName() {
@@ -105,7 +103,7 @@ public class Municipality implements Serializable {
 
   @Override
   public String toString() {
-    return "Municipality [municipalityId=" + municipalityId + ", municipalityName="
+    return "Municipality [id=" + id + ", municipalityName="
         + municipalityName
         + ", stateId=" + stateId + ", status=" + status + ", dateCreated=" + dateCreated
         + ", dateModified="

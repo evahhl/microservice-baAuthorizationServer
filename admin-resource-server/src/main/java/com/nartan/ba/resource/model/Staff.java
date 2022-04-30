@@ -34,7 +34,7 @@ public class Staff implements Serializable {
   private int status = 1;
 
   @OneToOne
-  @JoinColumn(name = "building_id", referencedColumnName = "building_id", nullable = false)
+  @JoinColumn(name = "building_id", referencedColumnName = "id", nullable = false)
   private Building building;
 
   @Column(name = "date_created", nullable = false, updatable = false)

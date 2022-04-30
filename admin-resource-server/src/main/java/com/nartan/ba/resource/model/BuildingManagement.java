@@ -22,7 +22,7 @@ public class BuildingManagement implements Serializable {
   protected int buildingManagementId;
 
   @OneToOne
-  @JoinColumn(name = "building_id", referencedColumnName = "building_id", nullable = false)
+  @JoinColumn(name = "building_id", referencedColumnName = "id", nullable = false)
   private Building building;
 
   @OneToOne

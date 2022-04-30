@@ -42,7 +42,7 @@ public class Country implements Serializable {
         return id;
     }
 
-    public void setId(int countryId) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -46,15 +46,15 @@ public class Address implements Serializable {
     protected Timestamp modificationTime;
 
     @OneToOne
-    @JoinColumn(name = "municipality_id", referencedColumnName = "municipality_id", nullable = false)
+    @JoinColumn(name = "municipality_id", referencedColumnName = "id", nullable = false)
     private Municipality municipality;
 
     @OneToOne
-    @JoinColumn(name = "state_id", referencedColumnName = "state_id", nullable = false)
+    @JoinColumn(name = "state_id", referencedColumnName = "id", nullable = false)
     private State state;
 
     @OneToOne
-    @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false)
+    @JoinColumn(name = "country_id", referencedColumnName = "id", nullable = false)
     private Country country;
 
     public Address() {

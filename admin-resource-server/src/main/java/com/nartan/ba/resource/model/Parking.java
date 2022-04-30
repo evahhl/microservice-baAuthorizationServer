@@ -26,7 +26,7 @@ public class Parking implements Serializable {
   protected int parkingId;
 
   @OneToOne
-  @JoinColumn(name = "building_id", referencedColumnName = "building_id", nullable = false)
+  @JoinColumn(name = "building_id", referencedColumnName = "id", nullable = false)
   private Building building;
 
   @Column(name = "apartment_number", nullable = false)
