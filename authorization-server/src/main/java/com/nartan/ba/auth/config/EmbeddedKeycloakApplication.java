@@ -38,15 +38,6 @@ public class EmbeddedKeycloakApplication extends KeycloakApplication {
         return exportImportManager;
     }
 
-//    public EmbeddedKeycloakApplication() {
-//
-//        super();
-//
-//        createMasterRealmAdminUser();
-//
-//        createNartanBaRealm();
-//    }
-
     private void createMasterRealmAdminUser() {
 
         KeycloakSession session = getSessionFactory().create();

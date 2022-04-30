@@ -4,7 +4,6 @@ import com.nartan.ba.resource.model.Address;
 import com.nartan.ba.resource.repository.AddressRepository;
 import com.nartan.ba.resource.service.AddressService;
 import com.google.common.collect.ImmutableList;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -15,8 +14,11 @@ import java.util.Optional;
 @Service
 public class AddressServiceImpl implements AddressService {
 
-  @Autowired
-  private AddressRepository repository;
+  private final AddressRepository repository;
+
+  public AddressServiceImpl(AddressRepository repository) {
+    this.repository = repository;
+  }
 
   @Override
   public List<Address> findAll(final Pageable pageable) {
