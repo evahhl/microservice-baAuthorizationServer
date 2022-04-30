@@ -14,7 +14,7 @@ import java.sql.Timestamp;
  * @author Eva Hernandez
  */
 @Entity
-@Table(name = "cat_municipality")
+@Table(name = "municipality")
 public class Municipality implements Serializable {
 
   private static final long serialVersionUID = 1L;

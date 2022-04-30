@@ -1,9 +1,9 @@
 package com.nartan.ba.resource.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -13,121 +13,75 @@ import java.sql.Timestamp;
  * @author Eva Hernandez
  */
 @Entity
-@Table(name = "cat_country")
+@Table(name = "country")
 public class Country implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "country_gen")
-  @SequenceGenerator(name = "country_gen", sequenceName = "country_seq", allocationSize = 1)
-  @Column(name = "country_id", nullable = false)
-  protected int countryId;
+    @Id
+    @Column(name = "id", nullable = false)
+    protected int id;
 
-  @Column(name = "country_name")
-  protected String countryName;
+    @Column(name = "country_name")
+    protected String countryName;
 
-  @Column(name = "status", nullable = false, length = 1)
-  protected int status;
+    @Column(name = "status", nullable = false, length = 1)
+    protected int status;
 
-  @Column(name = "date_created", nullable = false, updatable = false)
-  @CreationTimestamp
-  protected Timestamp dateCreated;
+    @Column(name = "creation_time", nullable = false, updatable = false)
+    protected Timestamp creationTime;
 
-  @Column(name = "date_modified")
-  @UpdateTimestamp
-  protected Timestamp dateModified;
+    @Column(name = "modification_time")
+    protected Timestamp modificationTime;
 
 
-  public Country() {
-  }
+    public Country() {
+    }
 
+    public int getId() {
+        return id;
+    }
 
-  /**
-   * @return the countryId
-   */
-  public int getCountryId() {
-    return countryId;
-  }
+    public void setId(int countryId) {
+        this.id = id;
+    }
 
+    public String getCountryName() {
+        return countryName;
+    }
 
-  /**
-   * @param countryId the countryId to set
-   */
-  public void setCountryId(int countryId) {
-    this.countryId = countryId;
-  }
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
 
+    public int getStatus() {
+        return status;
+    }
 
-  /**
-   * @return the countryName
-   */
-  public String getCountryName() {
-    return countryName;
-  }
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
+    public Timestamp getCreationTime() {
+        return creationTime;
+    }
 
-  /**
-   * @param countryName the countryName to set
-   */
-  public void setCountryName(String countryName) {
-    this.countryName = countryName;
-  }
+    public void setCreationTime(Timestamp creationTime) {
+        this.creationTime = creationTime;
+    }
 
+    public Timestamp getModificationTime() {
+        return modificationTime;
+    }
 
-  /**
-   * @return the status
-   */
-  public int getStatus() {
-    return status;
-  }
+    public void setModificationTime(Timestamp modificationTime) {
+        this.modificationTime = modificationTime;
+    }
 
-
-  /**
-   * @param status the status to set
-   */
-  public void setStatus(int status) {
-    this.status = status;
-  }
-
-
-  /**
-   * @return the dateCreated
-   */
-  public Timestamp getDateCreated() {
-    return dateCreated;
-  }
-
-
-  /**
-   * @param dateCreated the dateCreated to set
-   */
-  public void setDateCreated(Timestamp dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-
-  /**
-   * @return the dateModified
-   */
-  public Timestamp getDateModified() {
-    return dateModified;
-  }
-
-
-  /**
-   * @param dateModified the dateModified to set
-   */
-  public void setDateModified(Timestamp dateModified) {
-    this.dateModified = dateModified;
-  }
-
-
-  @Override
-  public String toString() {
-    return "Country [countryId=" + countryId + ", countryName=" + countryName + ", status=" + status
-        + ", dateCreated=" + dateCreated + ", dateModified=" + dateModified + "]";
-  }
-
+    @Override
+    public String toString() {
+        return "Country [id=" + id + ", countryName=" + countryName + ", status=" + status
+                + ", creationTime=" + creationTime + ", modificationTime=" + modificationTime + "]";
+    }
 
 }

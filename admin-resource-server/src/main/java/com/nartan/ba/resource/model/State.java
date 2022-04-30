@@ -1,8 +1,5 @@
 package com.nartan.ba.resource.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -13,94 +10,76 @@ import java.sql.Timestamp;
  * @author Eva Hernandez
  */
 @Entity
-@Table(name = "cat_state")
+@Table(name = "state")
 public class State implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "state_gen")
-  @SequenceGenerator(name = "state_gen", sequenceName = "state_seq", allocationSize = 1)
-  @Column(name = "state_id", nullable = false, unique = true)
-  protected int stateId;
+    @Id
+    @Column(name = "id", nullable = false, unique = true)
+    protected int id;
 
-  @Column(name = "state_name", nullable = false, unique = true)
-  protected String stateName;
+    @Column(name = "state_name", nullable = false, unique = true)
+    protected String stateName;
 
-  @OneToOne
-  @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false, columnDefinition = "int default 1")
-  private Country countryId;
+    @Column(name = "status", nullable = false, length = 1)
+    protected int status;
 
-  @Column(name = "status", nullable = false, length = 1)
-  protected int status;
+    @Column(name = "creation_time", nullable = false, updatable = false)
+    protected Timestamp creationTime;
 
-  @Column(name = "date_created", nullable = false, updatable = false)
-  @CreationTimestamp
-  protected Timestamp dateCreated;
+    @Column(name = "modification_time")
+    protected Timestamp modificationTime;
 
-  @Column(name = "date_modified")
-  @UpdateTimestamp
-  protected Timestamp dateModified;
+    @OneToOne
+    @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false, columnDefinition = "int default 1")
+    private Country countryId;
 
-  public int getStateId() {
-    return stateId;
-  }
+    public int getId() {
+        return id;
+    }
 
-  public void setStateId(int stateId) {
-    this.stateId = stateId;
-  }
+    public void setId(int stateId) {
+        this.id = id;
+    }
 
-  public String getStateName() {
-    return stateName;
-  }
+    public String getStateName() {
+        return stateName;
+    }
 
-  public void setStateName(String stateName) {
-    this.stateName = stateName;
-  }
+    public void setStateName(String stateName) {
+        this.stateName = stateName;
+    }
 
-  public int getStatus() {
-    return status;
-  }
+    public int getStatus() {
+        return status;
+    }
 
-  public void setStatus(int status) {
-    this.status = status;
-  }
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
+    public Timestamp getCreationTime() {
+        return creationTime;
+    }
 
-  /**
-   * @return the dateCreated
-   */
-  public Timestamp getDateCreated() {
-    return dateCreated;
-  }
+    public void setCreationTime(Timestamp creationTime) {
+        this.creationTime = creationTime;
+    }
 
-  /**
-   * @param dateCreated the dateCreated to set
-   */
-  public void setDateCreated(Timestamp dateCreated) {
-    this.dateCreated = dateCreated;
-  }
+    public Timestamp getModificationTime() {
+        return modificationTime;
+    }
 
-  /**
-   * @return the dateModified
-   */
-  public Timestamp getDateModified() {
-    return dateModified;
-  }
+    public void setModificationTime(Timestamp modificationTime) {
+        this.modificationTime = modificationTime;
+    }
 
-  /**
-   * @param dateModified the dateModified to set
-   */
-  public void setDateModified(Timestamp dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  @Override
-  public String toString() {
-    return "State [stateId=" + stateId + ", stateName=" + stateName + ", status=" + status
-        + ", dateCreated="
-        + dateCreated + ", dateModified=" + dateModified + "]";
-  }
-
+    @Override
+    public String toString() {
+        return "State [id=" + id + ", stateName=" + stateName + ", status=" + status
+                + ", creationTime="
+                + creationTime + ", modificationTime=" + modificationTime + "]";
+    }
 
 }

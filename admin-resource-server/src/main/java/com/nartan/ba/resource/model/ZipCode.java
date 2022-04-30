@@ -1,8 +1,5 @@
 package com.nartan.ba.resource.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -13,184 +10,125 @@ import java.sql.Timestamp;
  * @author Eva Hernandez
  */
 @Entity
-@Table(name = "cat_zip_code")
+@Table(name = "zip_code")
 public class ZipCode implements Serializable {
 
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
+    @Id
+    @Column(name = "id", nullable = false)
+    protected int id;
 
-  @Id
-  @Column(name = "zip_code_id", nullable = false)
-  protected int zipCodeId;
+    @Column(name = "zip_code", nullable = false)
+    protected String zipCode;
 
-  @Column(name = "zip_code", nullable = false)
-  protected String zipCode;
+    @Column(name = "neighborhood", nullable = false)
+    protected String neighborhood;
 
-  @Column(name = "neighborhood", nullable = false)
-  protected String neighborhood;
+    @Column(name = "status", nullable = false)
+    protected int status;
 
-  @OneToOne
-  @JoinColumn(name = "municipality_id", referencedColumnName = "municipality_id", nullable = false)
-  private Municipality municipality;
+    @Column(name = "creation_time", nullable = false, updatable = false)
+    protected Timestamp creationTime;
 
-  @OneToOne
-  @JoinColumn(name = "state_id", referencedColumnName = "state_id", nullable = false)
-  private State state;
+    @Column(name = "modification_time")
+    protected Timestamp modificationTime;
 
+    @OneToOne
+    @JoinColumn(name = "municipality_id", referencedColumnName = "id", nullable = false)
+    private Municipality municipality;
 
-  @OneToOne
-  @JoinColumn(name = "country_id", referencedColumnName = "country_id", nullable = false)
-  private Country country;
+    @OneToOne
+    @JoinColumn(name = "state_id", referencedColumnName = "id", nullable = false)
+    private State state;
 
-  @Column(name = "status", nullable = false)
-  protected int status;
+    @OneToOne
+    @JoinColumn(name = "country_id", referencedColumnName = "id", nullable = false)
+    private Country country;
 
-  @Column(name = "date_created", nullable = false, updatable = false)
-  @CreationTimestamp
-  protected Timestamp dateCreated;
+    public ZipCode() {
+    }
 
-  @Column(name = "date_modified")
-  @UpdateTimestamp
-  protected Timestamp dateModified;
+    public int getId() {
+        return id;
+    }
 
-  public ZipCode() {
-  }
+    public void setId(int zipCodeId) {
+        this.id = id;
+    }
 
-  /**
-   * @return the zipCodeId
-   */
-  public int getZipCodeId() {
-    return zipCodeId;
-  }
+    public String getZipCode() {
+        return zipCode;
+    }
 
-  /**
-   * @param zipCodeId the zipCodeId to set
-   */
-  public void setZipCodeId(int zipCodeId) {
-    this.zipCodeId = zipCodeId;
-  }
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
 
-  /**
-   * @return the zipCode
-   */
-  public String getZipCode() {
-    return zipCode;
-  }
+    public String getNeighborhood() {
+        return neighborhood;
+    }
 
-  /**
-   * @param zipCode the zipCode to set
-   */
-  public void setZipCode(String zipCode) {
-    this.zipCode = zipCode;
-  }
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
+    }
 
-  /**
-   * @return the neighborhood
-   */
-  public String getNeighborhood() {
-    return neighborhood;
-  }
+    public Municipality getMunicipality() {
+        return municipality;
+    }
 
-  /**
-   * @param neighborhood the neighborhood to set
-   */
-  public void setNeighborhood(String neighborhood) {
-    this.neighborhood = neighborhood;
-  }
+    public void setMunicipality(Municipality municipality) {
+        this.municipality = municipality;
+    }
 
-  /**
-   * @return the municipality
-   */
-  public Municipality getMunicipality() {
-    return municipality;
-  }
+    public State getState() {
+        return state;
+    }
 
-  /**
-   * @param municipality the municipalityId to set
-   */
-  public void setMunicipality(Municipality municipality) {
-    this.municipality = municipality;
-  }
+    public void setState(State state) {
+        this.state = state;
+    }
 
-  /**
-   * @return the state
-   */
-  public State getState() {
-    return state;
-  }
+    public Country getCountry() {
+        return country;
+    }
 
-  /**
-   * @param stateId the state to set
-   */
-  public void setState(State state) {
-    this.state = state;
-  }
+    public void setCountry(Country country) {
+        this.country = country;
+    }
 
-  /**
-   * @return the country
-   */
-  public Country getCountry() {
-    return country;
-  }
+    public int getStatus() {
+        return status;
+    }
 
-  /**
-   * @param country the country to set
-   */
-  public void setCountry(Country country) {
-    this.country = country;
-  }
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-  /**
-   * @return the status
-   */
-  public int getStatus() {
-    return status;
-  }
+    public Timestamp getCreationTime() {
+        return creationTime;
+    }
 
-  /**
-   * @param status the status to set
-   */
-  public void setStatus(int status) {
-    this.status = status;
-  }
+    public void setCreationTime(Timestamp creationTime) {
+        this.creationTime = creationTime;
+    }
 
-  /**
-   * @return the dateCreated
-   */
-  public Timestamp getDateCreated() {
-    return dateCreated;
-  }
+    public Timestamp getModificationTime() {
+        return modificationTime;
+    }
 
-  /**
-   * @param dateCreated the dateCreated to set
-   */
-  public void setDateCreated(Timestamp dateCreated) {
-    this.dateCreated = dateCreated;
-  }
+    public void setModificationTime(Timestamp dateModified) {
+        this.modificationTime = modificationTime;
+    }
 
-  /**
-   * @return the dateModified
-   */
-  public Timestamp getDateModified() {
-    return dateModified;
-  }
-
-  /**
-   * @param dateModified the dateModified to set
-   */
-  public void setDateModified(Timestamp dateModified) {
-    this.dateModified = dateModified;
-  }
-
-  @Override
-  public String toString() {
-    return "ZipCode [zipCodeId=" + zipCodeId + ", zipCode=" + zipCode + ", neighborhood="
-        + neighborhood
-        + ", municipality=" + municipality + ", state=" + state + ", country=" + country
-        + ", status=" + status + ", dateCreated=" + dateCreated + ", dateModified=" + dateModified
-        + "]";
-  }
-
+    @Override
+    public String toString() {
+        return "ZipCode [id=" + id + ", zipCode=" + zipCode + ", neighborhood="
+                + neighborhood
+                + ", municipality=" + municipality + ", state=" + state + ", country=" + country
+                + ", status=" + status + ", creationTime=" + creationTime + ", modificationTime=" + modificationTime
+                + "]";
+    }
 
 }
 
