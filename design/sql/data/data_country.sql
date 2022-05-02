@@ -1,5 +1,5 @@
 INSERT INTO country(
-    country_name, status)
+    country_name)
 VALUES
-       ('México', 1),
-       ('United States', 1);
+       ('México'),
+       ('United States');

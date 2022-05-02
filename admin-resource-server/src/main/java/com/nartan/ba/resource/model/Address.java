@@ -1,8 +1,6 @@
 package com.nartan.ba.resource.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
 
 
 /**
@@ -12,7 +10,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "address")
-public class Address implements Serializable {
+public class Address extends DateBase {
 
     private static final long serialVersionUID = 1L;
 
@@ -38,12 +36,6 @@ public class Address implements Serializable {
 
     @Column(name = "zip_code")
     protected String zipCode;
-
-    @Column(name = "creation_time", nullable = false, updatable = false)
-    protected Timestamp creationTime;
-
-    @Column(name = "modification_time")
-    protected Timestamp modificationTime;
 
     @OneToOne
     @JoinColumn(name = "municipality_id", referencedColumnName = "id", nullable = false)
@@ -132,22 +124,6 @@ public class Address implements Serializable {
         this.country = country;
     }
 
-    public Timestamp getCreationTime() {
-        return creationTime;
-    }
-
-    public void setCreationTime(Timestamp creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    public Timestamp getModificationTime() {
-        return modificationTime;
-    }
-
-    public void setModificationTime(Timestamp modificationTime) {
-        this.modificationTime = modificationTime;
-    }
-
     @Override
     public String toString() {
         return "Address [id=" + id + ", streetName=" + streetName + ", exteriorNumber="
@@ -155,7 +131,6 @@ public class Address implements Serializable {
                 + ", interiorNumber=" + interiorNumber + ", neighborhood=" + neighborhood + ", zipCode="
                 + zipCode
                 + ", municipality=" + municipality + ", state=" + state + ", country=" + country
-                + ", creationTime="
-                + creationTime + ", modificationTime=" + modificationTime + "]";
+                + ", creationTime=" + getCreationTime() + ", modificationTime=" + getModificationTime() + "]";
     }
 }

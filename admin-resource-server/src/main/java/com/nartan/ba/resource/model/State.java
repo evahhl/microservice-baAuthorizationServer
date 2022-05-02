@@ -1,8 +1,6 @@
 package com.nartan.ba.resource.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
 
 /**
  * Persistent State entity with JPA markup. States are stored in an relational database.
@@ -11,7 +9,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "state")
-public class State implements Serializable {
+public class State extends DateBase {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,11 +23,6 @@ public class State implements Serializable {
     @Column(name = "status", nullable = false, length = 1)
     protected int status;
 
-    @Column(name = "creation_time", nullable = false, updatable = false)
-    protected Timestamp creationTime;
-
-    @Column(name = "modification_time")
-    protected Timestamp modificationTime;
 
     @OneToOne
     @JoinColumn(name = "country_id", referencedColumnName = "id", nullable = false, columnDefinition = "int default 1")
@@ -59,27 +52,11 @@ public class State implements Serializable {
         this.status = status;
     }
 
-    public Timestamp getCreationTime() {
-        return creationTime;
-    }
-
-    public void setCreationTime(Timestamp creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    public Timestamp getModificationTime() {
-        return modificationTime;
-    }
-
-    public void setModificationTime(Timestamp modificationTime) {
-        this.modificationTime = modificationTime;
-    }
-
     @Override
     public String toString() {
         return "State [id=" + id + ", stateName=" + stateName + ", status=" + status
                 + ", creationTime="
-                + creationTime + ", modificationTime=" + modificationTime + "]";
+                + getCreationTime() + ", modificationTime=" + getModificationTime() + "]";
     }
 
 }

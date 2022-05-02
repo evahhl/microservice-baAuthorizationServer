@@ -1,11 +1,6 @@
 package com.nartan.ba.resource.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
 
 /**
  * Persistent Municipality entity with JPA markup. Municipalities are stored in an relational
@@ -15,7 +10,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "municipality")
-public class Municipality implements Serializable {
+public class Municipality extends DateBase {
 
   private static final long serialVersionUID = 1L;
 
@@ -31,14 +26,6 @@ public class Municipality implements Serializable {
 
   @Column(name = "status", nullable = false, length = 1)
   protected int status;
-
-  @Column(name = "date_created", nullable = false, updatable = false)
-  @CreationTimestamp
-  protected Timestamp dateCreated;
-
-  @Column(name = "date_modified")
-  @UpdateTimestamp
-  protected Timestamp dateModified;
 
   public int getId() {
     return id;
@@ -72,42 +59,13 @@ public class Municipality implements Serializable {
     this.status = status;
   }
 
-
-  /**
-   * @return the dateCreated
-   */
-  public Timestamp getDateCreated() {
-    return dateCreated;
-  }
-
-  /**
-   * @param dateCreated the dateCreated to set
-   */
-  public void setDateCreated(Timestamp dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  /**
-   * @return the dateModified
-   */
-  public Timestamp getDateModified() {
-    return dateModified;
-  }
-
-  /**
-   * @param dateModified the dateModified to set
-   */
-  public void setDateModified(Timestamp dateModified) {
-    this.dateModified = dateModified;
-  }
-
   @Override
   public String toString() {
     return "Municipality [id=" + id + ", municipalityName="
         + municipalityName
-        + ", stateId=" + stateId + ", status=" + status + ", dateCreated=" + dateCreated
+        + ", stateId=" + stateId + ", status=" + status + ", dateCreated=" + getCreationTime()
         + ", dateModified="
-        + dateModified + "]";
+        + getModificationTime() + "]";
   }
 
 

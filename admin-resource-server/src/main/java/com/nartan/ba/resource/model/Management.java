@@ -1,11 +1,6 @@
 package com.nartan.ba.resource.model;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
 
 /**
  * Persistent management entity with JPA markup. Management are stored in an relational database.
@@ -14,7 +9,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "management")
-public class Management implements Serializable {
+public class Management extends DateBase {
 
   private static final long serialVersionUID = 1L;
 
@@ -41,14 +36,6 @@ public class Management implements Serializable {
 
   @Column(name = "status", nullable = false, length = 1, columnDefinition = "int default 1")
   protected int status;
-
-  @Column(name = "date_created", nullable = false, updatable = false)
-  @CreationTimestamp
-  protected Timestamp dateCreated;
-
-  @Column(name = "date_modified")
-  @UpdateTimestamp
-  protected Timestamp dateModified;
 
   public Management() {
   }
@@ -123,33 +110,6 @@ public class Management implements Serializable {
     this.type = type;
   }
 
-  /**
-   * @return the dateCreated
-   */
-  public Timestamp getDateCreated() {
-    return dateCreated;
-  }
-
-  /**
-   * @param dateCreated the dateCreated to set
-   */
-  public void setDateCreated(Timestamp dateCreated) {
-    this.dateCreated = dateCreated;
-  }
-
-  /**
-   * @return the dateModified
-   */
-  public Timestamp getDateModified() {
-    return dateModified;
-  }
-
-  /**
-   * @param dateModified the dateModified to set
-   */
-  public void setDateModified(Timestamp dateModified) {
-    this.dateModified = dateModified;
-  }
 
   /**
    * @return the status
@@ -169,9 +129,9 @@ public class Management implements Serializable {
   public String toString() {
     return "Management [managementId=" + managementId + ", user=" + user + ", address=" + address
         + ", rfc=" + rfc
-        + ", type=" + type + ", status=" + status + ", dateCreated=" + dateCreated
+        + ", type=" + type + ", status=" + status + ", dateCreated=" + getCreationTime()
         + ", dateModified="
-        + dateModified + "]";
+        + getModificationTime() + "]";
   }
 
 

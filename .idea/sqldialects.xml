@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/design/sql/database.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/design/sql/entities/address.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/design/sql/entities/apartment.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/design/sql/entities/building.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/design/sql/entities/country.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/design/sql/entities/state.sql" dialect="PostgreSQL" />
     <file url="file://$PROJECT_DIR$/design/sql/entities/zip_code.sql" dialect="PostgreSQL" />

@@ -55,7 +55,7 @@ public class StaffController {
     } else {
       staff.get().setStatus(0);
       staffService.delete(staff.get());
-      System.out.println("deleteStaff registro borrado " + staff.get().getStaffId());
+      System.out.println("deleteStaff registro borrado " + staff.get().getId());
     }
 
   }

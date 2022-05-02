@@ -1,9 +1,6 @@
 package com.nartan.ba.resource.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
-
 
 /**
  * Persistent building entity with JPA markup. Building are stored in an relational database.
@@ -12,7 +9,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "building")
-public class Building implements Serializable {
+public class Building extends DateBase {
 
     private static final long serialVersionUID = 1L;
 
@@ -20,8 +17,8 @@ public class Building implements Serializable {
     @Column(name = "id", nullable = false, unique = true)
     protected int id;
 
-    @Column(name = "building_name", nullable = false)
-    protected String buildingName;
+    @Column(name = "name", nullable = false)
+    protected String name;
 
     @Column(name = "phone_number", nullable = false, length = 10)
     protected String phoneNumber;
@@ -32,12 +29,6 @@ public class Building implements Serializable {
     @Column(name = "status", nullable = false, length = 1, columnDefinition = "int default 1")
     protected int status = 1;
 
-    @Column(name = "creation_time", nullable = false, updatable = false)
-    protected Timestamp creationTime;
-
-    @Column(name = "date_modified")
-    protected Timestamp dateModified;
-
     @OneToOne
     @JoinColumn(name = "address_id", referencedColumnName = "id", nullable = false)
     private Address address;
@@ -45,14 +36,11 @@ public class Building implements Serializable {
     public Building() {
     }
 
-    public Building(int id, String buildingName, String phoneNumber, String email,
-                    Timestamp creationTime, Timestamp dateModified) {
+    public Building(int id, String name, String phoneNumber, String email) {
         this.id = id;
-        this.buildingName = buildingName;
+        this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.creationTime = creationTime;
-        this.dateModified = dateModified;
     }
 
 
@@ -64,12 +52,12 @@ public class Building implements Serializable {
         this.id = id;
     }
 
-    public String getBuildingName() {
-        return buildingName;
+    public String getName() {
+        return name;
     }
 
-    public void setBuildingName(String buildingName) {
-        this.buildingName = buildingName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Address getAddress() {
@@ -96,22 +84,6 @@ public class Building implements Serializable {
         this.email = email;
     }
 
-    public Timestamp getCreationTime() {
-        return creationTime;
-    }
-
-    public void setCreationTime(Timestamp creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    public Timestamp getDateModified() {
-        return dateModified;
-    }
-
-    public void setDateModified(Timestamp dateModified) {
-        this.dateModified = dateModified;
-    }
-
     public int getStatus() {
         return status;
     }
@@ -122,11 +94,11 @@ public class Building implements Serializable {
 
     @Override
     public String toString() {
-        return "Building [id=" + id + ", buildingName=" + buildingName + ", address="
+        return "Building [id=" + id + ", name=" + name + ", address="
                 + address
                 + ", phoneNumber=" + phoneNumber + ", email=" + email + ", status=" + status
                 + ", creationTime="
-                + creationTime + ", dateModified=" + dateModified + "]";
+                + getCreationTime() + ", modificationTime=" + getModificationTime() + "]";
     }
 
 

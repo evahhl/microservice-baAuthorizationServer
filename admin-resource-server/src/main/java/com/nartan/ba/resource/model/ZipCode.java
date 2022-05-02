@@ -1,8 +1,6 @@
 package com.nartan.ba.resource.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.sql.Timestamp;
 
 /**
  * Persistent zip code entity with JPA markup. Zip Codes are stored in an H2 relational database.
@@ -11,7 +9,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "zip_code")
-public class ZipCode implements Serializable {
+public class ZipCode extends DateBase {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,12 +25,6 @@ public class ZipCode implements Serializable {
 
     @Column(name = "status", nullable = false)
     protected int status;
-
-    @Column(name = "creation_time", nullable = false, updatable = false)
-    protected Timestamp creationTime;
-
-    @Column(name = "modification_time")
-    protected Timestamp modificationTime;
 
     @OneToOne
     @JoinColumn(name = "municipality_id", referencedColumnName = "id", nullable = false)
@@ -105,28 +97,13 @@ public class ZipCode implements Serializable {
         this.status = status;
     }
 
-    public Timestamp getCreationTime() {
-        return creationTime;
-    }
-
-    public void setCreationTime(Timestamp creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    public Timestamp getModificationTime() {
-        return modificationTime;
-    }
-
-    public void setModificationTime(Timestamp dateModified) {
-        this.modificationTime = modificationTime;
-    }
 
     @Override
     public String toString() {
         return "ZipCode [id=" + id + ", zipCode=" + zipCode + ", neighborhood="
                 + neighborhood
                 + ", municipality=" + municipality + ", state=" + state + ", country=" + country
-                + ", status=" + status + ", creationTime=" + creationTime + ", modificationTime=" + modificationTime
+                + ", status=" + status + ", creationTime=" + getCreationTime() + ", modificationTime=" + getModificationTime()
                 + "]";
     }
 

@@ -10,9 +10,9 @@ CREATE TABLE public.apartment
     room_number integer NOT NULL,
     bathroom_number integer NOT NULL,
     size integer NOT NULL,
-    parking_number integer NOT NULL,
     location character varying(80) NOT NULL,
     balcony_number integer NOT NULL,
+    CONSTRAINT apartment_pk PRIMARY KEY (id),
     CONSTRAINT apartment_building_fk FOREIGN KEY (building_id)
     REFERENCES public.building (id) MATCH SIMPLE
                            ON UPDATE NO ACTION

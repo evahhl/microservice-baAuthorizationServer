@@ -55,7 +55,7 @@ public class ParkingController {
     } else {
       parking.get().setStatus(0);
       parkingService.delete(parking.get());
-      System.out.println("deleteParking registro borrado " + parking.get().getParkingId());
+      System.out.println("deleteParking registro borrado " + parking.get().getId());
     }
   }
 }
