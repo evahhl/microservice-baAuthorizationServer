@@ -1,5 +1,4 @@
-INSERT INTO public.apartment(
-    number, building_id, room_number, bathroom_number, size, location, balcony_number)
+INSERT INTO public.apartment(number, building_id, room_number, bathroom_number, size, location, balcony_number)
 VALUES
        ('GH1', (select id from building where name='Lucas Alamán 105'), 2, 2, 62, 'TORRE A', 2),
        ('GH2', (select id from building where name='Lucas Alamán 105'), 2, 2, 62, 'TORRE A', 2),

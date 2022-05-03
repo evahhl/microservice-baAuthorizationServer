@@ -1,7 +1,6 @@
-INSERT INTO public.user_type(
-    description)
+INSERT INTO public.user_type(description)
 VALUES ('Dueño'),
        ('Residente'),
-   --    ('Inquilino'),
-       ('Admin'),
+       ('Inquilino'),
+       ('Administrador'),
        ('Auxiliar');

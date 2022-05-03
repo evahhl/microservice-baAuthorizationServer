@@ -1,5 +1,4 @@
-INSERT INTO municipality(
-    municipality_name, state_id, status)
+INSERT INTO municipality(municipality_name, state_id, status)
 VALUES
        ('Álvaro Obregón', 10, 1),
        ('Azcapotzalco', 10, 1),

@@ -1,5 +1,4 @@
-INSERT INTO public.parking(
-    parking_number, building_id)
+INSERT INTO public.parking(parking_number, building_id)
 VALUES
        (1, (select id from building where name='Lucas Alamán 105')),
        (2, (select id from building where name='Lucas Alamán 105')),

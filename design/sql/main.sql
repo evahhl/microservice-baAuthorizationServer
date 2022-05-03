@@ -11,6 +11,8 @@
 \ir entities/apartment.sql
 \ir entities/parking.sql
 \ir entities/user_type.sql
+\ir entities/user.sql
+\ir entities/user_apartment.sql
 \echo 'creating Functions...'
 \echo 'creating Triggers...'
 \ir triggers/update_modification_time.sql
@@ -25,4 +27,6 @@
 \ir data/data_apartment.sql
 \ir data/data_parking.sql
 \ir data/data_user_type.sql
+\ir data/data_user.sql
+\ir data/data_user_apartment.sql
 

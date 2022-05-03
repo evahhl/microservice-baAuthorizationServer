@@ -9,7 +9,7 @@ import javax.persistence.*;
  * @author Eva Hernandez
  */
 @Entity
-@Table(name = "user_building")
+@Table(name = "public.user")
 public class User extends DateBase {
 
   private static final long serialVersionUID = 1L;
@@ -24,13 +24,13 @@ public class User extends DateBase {
   @Column(name = "last_name", nullable = false)
   private String lastName;
 
-  @Column(name = "email", nullable = false)
+  @Column(name = "email")
   private String email;
 
-  @Column(name = "phone_number", nullable = false, length = 10)
+  @Column(name = "phone_number", length = 10)
   private int phoneNumber;
 
-  @Column(name = "mobile_phone", nullable = false, length = 10)
+  @Column(name = "mobile_phone", length = 10)
   private int mobileNumber;
 
   @OneToOne
