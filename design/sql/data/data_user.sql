@@ -100,3 +100,7 @@ VALUES
        ('Maribel', 'del Pedro Lopez', null, null, null, 1),
        ('Juan José', 'Ramirez Salazar', null, null, null, 1),
        ('Eva Haydeé', 'Hernández López', null, null, null, 2);
+
+INSERT INTO public.user(name, last_name, email, phone_number, mobile_phone, user_type_id)
+VALUES
+    ('Admin', 'Admin', null, null, null, 4);

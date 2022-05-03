@@ -13,6 +13,8 @@
 \ir entities/user_type.sql
 \ir entities/user.sql
 \ir entities/user_apartment.sql
+\ir entities/management.sql
+\ir entities/building_management.sql
 \echo 'creating Functions...'
 \echo 'creating Triggers...'
 \ir triggers/update_modification_time.sql
@@ -29,4 +31,6 @@
 \ir data/data_user_type.sql
 \ir data/data_user.sql
 \ir data/data_user_apartment.sql
+\ir data/data_management.sql
+\ir data/data_building_management.sql
 

@@ -23,6 +23,10 @@ public class BuildingManagement extends DateBase {
   private Building building;
 
   @OneToOne
+  @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
+  private User user;
+
+  @OneToOne
   @JoinColumn(name = "management_id", referencedColumnName = "id", nullable = false)
   private Management management;
 
@@ -42,6 +46,14 @@ public class BuildingManagement extends DateBase {
     this.building = building;
   }
 
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
   public Management getManagement() {
     return management;
   }
@@ -54,6 +66,7 @@ public class BuildingManagement extends DateBase {
   public String toString() {
     return "BuildingManagement [id=" + id + ", building="
         + building
+        + ", user=" + user
         + ", management=" + management + "]";
   }
 

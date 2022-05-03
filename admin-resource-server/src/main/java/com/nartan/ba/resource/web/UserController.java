@@ -1,8 +1,6 @@
 package com.nartan.ba.resource.web;
 
 import com.nartan.ba.resource.model.User;
-import com.nartan.ba.resource.model.UserLogin;
-import com.nartan.ba.resource.service.UserLoginService;
 import com.nartan.ba.resource.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -24,8 +22,6 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @Autowired
-  private UserLoginService userLoginService;
 
   private BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -67,15 +63,8 @@ public class UserController {
     } else {
       user.get().setStatus(0);
       userService.delete(user.get());
-      System.out.println("deleteUser registro borrado " + user.get().getUserId());
+      System.out.println("deleteUser registro borrado " + user.get().getId());
     }
 
-  }
-
-  @PostMapping(path = "/addLogin")
-  public void addUser(@RequestBody UserLogin userLogin) {
-
-    userLogin.setPassword(bCryptPasswordEncoder.encode(userLogin.getPassword()));
-    userLoginService.add(userLogin);
   }
 }
