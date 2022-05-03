@@ -34,7 +34,7 @@ public class User extends DateBase {
   private int mobileNumber;
 
   @OneToOne
-  @JoinColumn(name = "user_type_id", referencedColumnName = "user_type_id", nullable = false)
+  @JoinColumn(name = "user_type_id", referencedColumnName = "id", nullable = false)
   private UserType type;
 
   @Column(name = "status", nullable = false, length = 1, columnDefinition = "int default 1")
