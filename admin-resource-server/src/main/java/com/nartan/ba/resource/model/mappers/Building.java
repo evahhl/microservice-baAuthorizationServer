@@ -1,4 +1,4 @@
-package com.nartan.ba.resource.model;
+package com.nartan.ba.resource.model.mappers;
 
 import javax.persistence.*;
 

@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.web;
 
-import com.nartan.ba.resource.model.Management;
+import com.nartan.ba.resource.model.mappers.Management;
 import com.nartan.ba.resource.service.ManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -55,7 +55,7 @@ public class ManagementController {
     } else {
       management.get().setStatus(0);
       managementService.delete(management.get());
-      System.out.println("deleteManagement registro borrado " + management.get().getManagementId());
+      System.out.println("deleteManagement registro borrado " + management.get().getId());
     }
   }
 }

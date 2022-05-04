@@ -1,7 +1,8 @@
-package com.nartan.ba.resource.service;
+package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.State;
+import com.nartan.ba.resource.model.mappers.State;
 import com.nartan.ba.resource.repository.StateRepository;
+import com.nartan.ba.resource.service.StateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ public class StateServiceImpl implements StateService {
   @Override
   public State findbyStateId(int stateId) {
 
-    return repository.findbyStateId(stateId);
+    return repository.getById(stateId);
   }
 
   @Override

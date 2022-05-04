@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.Staff;
+import com.nartan.ba.resource.model.mappers.Staff;
 import com.nartan.ba.resource.repository.StaffRepository;
 import com.nartan.ba.resource.service.StaffService;
 import com.google.common.collect.ImmutableList;

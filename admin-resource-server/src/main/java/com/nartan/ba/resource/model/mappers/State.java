@@ -1,4 +1,4 @@
-package com.nartan.ba.resource.model;
+package com.nartan.ba.resource.model.mappers;
 
 import javax.persistence.*;
 
@@ -20,7 +20,7 @@ public class State extends DateBase {
     @Column(name = "state_name", nullable = false, unique = true)
     protected String stateName;
 
-    @Column(name = "status", nullable = false, length = 1)
+    @Column(name = "status", nullable = false, length = 1, columnDefinition = "int default 1")
     protected int status;
 
 
@@ -32,7 +32,7 @@ public class State extends DateBase {
         return id;
     }
 
-    public void setId(int stateId) {
+    public void setId(int id) {
         this.id = id;
     }
 

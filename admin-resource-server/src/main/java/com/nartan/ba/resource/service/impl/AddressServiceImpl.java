@@ -1,6 +1,8 @@
 package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.Address;
+import com.nartan.ba.resource.enums.ResultCode;
+import com.nartan.ba.resource.model.JsonResponse;
+import com.nartan.ba.resource.model.mappers.Address;
 import com.nartan.ba.resource.repository.AddressRepository;
 import com.nartan.ba.resource.service.AddressService;
 import com.google.common.collect.ImmutableList;
@@ -34,8 +36,8 @@ public class AddressServiceImpl implements AddressService {
   }
 
   @Override
-  public void add(Address address) {
-    repository.save(address);
+  public Address add(Address address) {
+    return repository.save(address);
   }
 
   @Override

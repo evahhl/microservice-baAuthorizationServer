@@ -1,4 +1,4 @@
-package com.nartan.ba.resource.model;
+package com.nartan.ba.resource.model.mappers;
 
 import javax.persistence.*;
 
@@ -9,7 +9,7 @@ import javax.persistence.*;
  * @author Eva Hernandez
  */
 @Entity
-@Table(name = "public.user")
+@Table(name = "user", schema="public")
 public class User extends DateBase {
 
   private static final long serialVersionUID = 1L;

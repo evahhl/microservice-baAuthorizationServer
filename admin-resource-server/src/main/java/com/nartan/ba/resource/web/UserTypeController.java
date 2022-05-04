@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.web;
 
-import com.nartan.ba.resource.model.UserType;
+import com.nartan.ba.resource.model.mappers.UserType;
 import com.nartan.ba.resource.service.UserTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

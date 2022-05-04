@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.repository;
 
-import com.nartan.ba.resource.model.UserApartment;
+import com.nartan.ba.resource.model.mappers.UserApartment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

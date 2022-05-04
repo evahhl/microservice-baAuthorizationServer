@@ -1,7 +1,8 @@
-package com.nartan.ba.resource.service;
+package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.Country;
+import com.nartan.ba.resource.model.mappers.Country;
 import com.nartan.ba.resource.repository.CountryRepository;
+import com.nartan.ba.resource.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

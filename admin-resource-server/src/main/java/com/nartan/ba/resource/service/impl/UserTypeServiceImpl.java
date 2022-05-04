@@ -3,7 +3,7 @@
  */
 package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.UserType;
+import com.nartan.ba.resource.model.mappers.UserType;
 import com.nartan.ba.resource.repository.UserTypeRepository;
 import com.nartan.ba.resource.service.UserTypeService;
 import com.google.common.collect.ImmutableList;

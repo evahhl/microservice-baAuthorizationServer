@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.repository;
 
-import com.nartan.ba.resource.model.State;
+import com.nartan.ba.resource.model.mappers.State;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -12,9 +12,6 @@ import java.util.List;
 public interface StateRepository extends JpaRepository<State, Integer> {
 
   List<State> findAll();
-
-  @Query("select s from #{#entityName} s where s.stateId = :stateId")
-  State findbyStateId(@Param("stateId") int stateId);
 
   @Query("select s from #{#entityName} s where s.stateName = :stateName")
   State findbyStateName(@Param("stateName") String stateName);

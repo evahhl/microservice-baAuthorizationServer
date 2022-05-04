@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.web;
 
-import com.nartan.ba.resource.model.BuildingManagement;
+import com.nartan.ba.resource.model.mappers.BuildingManagement;
 import com.nartan.ba.resource.service.BuildingManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

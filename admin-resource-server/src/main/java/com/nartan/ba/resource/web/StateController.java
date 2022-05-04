@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.web;
 
-import com.nartan.ba.resource.model.State;
+import com.nartan.ba.resource.model.mappers.State;
 import com.nartan.ba.resource.service.StateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

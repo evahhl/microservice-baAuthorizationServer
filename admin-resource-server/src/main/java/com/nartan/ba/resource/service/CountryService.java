@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.service;
 
-import com.nartan.ba.resource.model.Country;
+import com.nartan.ba.resource.model.mappers.Country;
 
 import java.util.List;
 import java.util.Optional;

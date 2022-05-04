@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.User;
+import com.nartan.ba.resource.model.mappers.User;
 import com.nartan.ba.resource.repository.UserRepository;
 import com.nartan.ba.resource.service.UserService;
 import com.google.common.collect.ImmutableList;

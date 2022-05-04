@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.repository;
 
-import com.nartan.ba.resource.model.Municipality;
+import com.nartan.ba.resource.model.mappers.Municipality;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -14,9 +14,6 @@ import java.util.List;
 public interface MunicipalityRepository extends JpaRepository<Municipality, Integer> {
 
   Page<Municipality> findAll(@Param("pageable") Pageable pageable);
-
-  @Query("select m from #{#entityName} m where m.municipalityId = :municipalityId")
-  Municipality findbyMunicipalityId(@Param("municipalityId") int municipalityId);
 
   @Query("select m from #{#entityName} m where m.municipalityName = :municipalityName")
   List<Municipality> findbyMunicipalityName(@Param("municipalityName") String municipalityName);

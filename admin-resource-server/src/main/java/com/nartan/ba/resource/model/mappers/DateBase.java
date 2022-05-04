@@ -1,4 +1,6 @@
-package com.nartan.ba.resource.model;
+package com.nartan.ba.resource.model.mappers;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Column;
 import java.io.Serializable;
@@ -11,9 +13,11 @@ import java.util.Date;
  */
 public class DateBase implements Serializable {
 
+    @JsonIgnore
     @Column(name = "creation_time", nullable = false, updatable = false)
     private Date creationTime;
 
+    @JsonIgnore
     @Column(name = "modification_time")
     private Date modificationTime;
 

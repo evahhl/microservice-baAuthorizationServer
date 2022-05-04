@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.web;
 
-import com.nartan.ba.resource.model.UserApartment;
+import com.nartan.ba.resource.model.mappers.UserApartment;
 import com.nartan.ba.resource.service.UserApartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.UserApartment;
+import com.nartan.ba.resource.model.mappers.UserApartment;
 import com.nartan.ba.resource.repository.UserApartmentRepository;
 import com.nartan.ba.resource.service.UserApartmentService;
 import com.google.common.collect.ImmutableList;

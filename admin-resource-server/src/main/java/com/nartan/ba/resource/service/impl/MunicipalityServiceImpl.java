@@ -1,7 +1,8 @@
-package com.nartan.ba.resource.service;
+package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.Municipality;
+import com.nartan.ba.resource.model.mappers.Municipality;
 import com.nartan.ba.resource.repository.MunicipalityRepository;
+import com.nartan.ba.resource.service.MunicipalityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ public class MunicipalityServiceImpl implements MunicipalityService {
   @Override
   public Municipality findbyMunicipalityId(int municipalityId) {
 
-    Municipality municipalities = repository.findbyMunicipalityId(municipalityId);
+    Municipality municipalities = repository.getById(municipalityId);
 
     return municipalities;
   }

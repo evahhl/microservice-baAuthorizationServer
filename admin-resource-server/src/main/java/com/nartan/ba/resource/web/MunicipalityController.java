@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.web;
 
-import com.nartan.ba.resource.model.Municipality;
+import com.nartan.ba.resource.model.mappers.Municipality;
 import com.nartan.ba.resource.service.MunicipalityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;

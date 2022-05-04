@@ -1,4 +1,4 @@
-package com.nartan.ba.resource.model;
+package com.nartan.ba.resource.model.mappers;
 
 import javax.persistence.*;
 
@@ -17,8 +17,8 @@ public class Apartment extends DateBase {
     @Column(name = "id", nullable = false, unique = true)
     protected int id;
 
-    @Column(name = "apartment_number", nullable = false)
-    protected String apartmentNumber;
+    @Column(name = "number", nullable = false)
+    protected String number;
 
     @Column(name = "room_number")
     protected int roomNumber;
@@ -50,12 +50,12 @@ public class Apartment extends DateBase {
         this.id = id;
     }
 
-    public String getApartmentNumber() {
-        return apartmentNumber;
+    public String getNumber() {
+        return number;
     }
 
-    public void setApartmentNumber(String apartmentNumber) {
-        this.apartmentNumber = apartmentNumber;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public Building getBuilding() {
@@ -109,7 +109,7 @@ public class Apartment extends DateBase {
 
     @Override
     public String toString() {
-        return "Apartment [id=" + id + ", apartmentNumber=" + apartmentNumber
+        return "Apartment [id=" + id + ", number=" + number
                 + ", building="
                 + building + ", roomNumber=" + roomNumber + ", bathroomNumber=" + bathroomNumber + ", size="
                 + size  + ", location=" + location + ", balconyNumber="  + balconyNumber

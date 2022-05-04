@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.service;
 
-import com.nartan.ba.resource.model.UserApartment;
+import com.nartan.ba.resource.model.mappers.UserApartment;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;

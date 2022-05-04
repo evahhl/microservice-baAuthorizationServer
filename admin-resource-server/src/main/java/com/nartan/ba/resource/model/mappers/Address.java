@@ -1,4 +1,4 @@
-package com.nartan.ba.resource.model;
+package com.nartan.ba.resource.model.mappers;
 
 import javax.persistence.*;
 
@@ -21,11 +21,11 @@ public class Address extends DateBase {
     @Column(name = "street_name", nullable = false)
     protected String streetName;
 
-    @Column(name = "exterior_number", nullable = false)
-    protected String exteriorNumber;
+    @Column(name = "ext_number", nullable = false)
+    protected String extNumber;
 
-    @Column(name = "interior_number")
-    protected String interiorNumber;
+    @Column(name = "int_number")
+    protected String intNumber;
 
     @Column(name = "neighborhood", nullable = false)
     protected String neighborhood;
@@ -68,20 +68,20 @@ public class Address extends DateBase {
         this.streetName = streetName;
     }
 
-    public String getExteriorNumber() {
-        return exteriorNumber;
+    public String getExtNumber() {
+        return extNumber;
     }
 
-    public void setExteriorNumber(String exteriorNumber) {
-        this.exteriorNumber = exteriorNumber;
+    public void setExtNumber(String extNumber) {
+        this.extNumber = extNumber;
     }
 
-    public String getInteriorNumber() {
-        return interiorNumber;
+    public String getIntNumber() {
+        return intNumber;
     }
 
-    public void setInteriorNumber(String interiorNumber) {
-        this.interiorNumber = interiorNumber;
+    public void setIntNumber(String interiorNumber) {
+        this.intNumber = intNumber;
     }
 
     public String getNeighborhood() {
@@ -126,11 +126,9 @@ public class Address extends DateBase {
 
     @Override
     public String toString() {
-        return "Address [id=" + id + ", streetName=" + streetName + ", exteriorNumber="
-                + exteriorNumber
-                + ", interiorNumber=" + interiorNumber + ", neighborhood=" + neighborhood + ", zipCode="
-                + zipCode
-                + ", municipality=" + municipality + ", state=" + state + ", country=" + country
+        return "Address [id=" + id + ", streetName=" + streetName + ", extNumber="
+                + extNumber + ", intNumber=" + intNumber + ", neighborhood=" + neighborhood + ", zipCode="
+                + zipCode + ", municipality=" + municipality + ", state=" + state + ", country=" + country
                 + ", creationTime=" + getCreationTime() + ", modificationTime=" + getModificationTime() + "]";
     }
 }

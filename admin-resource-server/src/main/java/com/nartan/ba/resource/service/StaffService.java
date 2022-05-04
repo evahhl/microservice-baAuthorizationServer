@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.service;
 
-import com.nartan.ba.resource.model.Staff;
+import com.nartan.ba.resource.model.mappers.Staff;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;

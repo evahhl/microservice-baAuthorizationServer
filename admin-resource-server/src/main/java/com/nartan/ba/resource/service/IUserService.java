@@ -3,7 +3,7 @@
  */
 package com.nartan.ba.resource.service;
 
-import com.nartan.ba.resource.model.User;
+import com.nartan.ba.resource.model.mappers.User;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.service;
 
-import com.nartan.ba.resource.model.Address;
+import com.nartan.ba.resource.model.mappers.Address;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public interface AddressService {
 
   Optional<Address> findById(int id);
 
-  void add(Address address);
+  Address add(Address address);
 
   void deleteById(int id);
 }

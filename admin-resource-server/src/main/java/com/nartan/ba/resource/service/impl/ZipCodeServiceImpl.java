@@ -1,7 +1,8 @@
-package com.nartan.ba.resource.service;
+package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.ZipCode;
+import com.nartan.ba.resource.model.mappers.ZipCode;
 import com.nartan.ba.resource.repository.ZipCodeRepository;
+import com.nartan.ba.resource.service.ZipCodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -55,24 +56,24 @@ public class ZipCodeServiceImpl implements ZipCodeService {
   }
 
   @Override
-  public List<ZipCode> findbyMunicipalityId(int municipalityId) {
-    List<ZipCode> zipCodes = (List<ZipCode>) repository.findbyMunicipalityId(municipalityId);
+  public List<ZipCode> findbyMunicipalityId(int id) {
+    List<ZipCode> zipCodes = (List<ZipCode>) repository.findbyMunicipalityId(id);
 
     return zipCodes;
   }
 
   @Override
-  public List<ZipCode> findbyStateId(int stateId) {
+  public List<ZipCode> findbyStateId(int id) {
 
-    List<ZipCode> zipCodes = (List<ZipCode>) repository.findbyStateId(stateId);
+    List<ZipCode> zipCodes = (List<ZipCode>) repository.findbyStateId(id);
 
     return zipCodes;
   }
 
   @Override
-  public List<ZipCode> findbyCountryId(int countryId) {
+  public List<ZipCode> findbyCountryId(int id) {
 
-    List<ZipCode> zipCodes = (List<ZipCode>) repository.findbyCountryId(countryId);
+    List<ZipCode> zipCodes = (List<ZipCode>) repository.findbyCountryId(id);
 
     return zipCodes;
   }

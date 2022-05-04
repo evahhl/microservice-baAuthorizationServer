@@ -1,6 +1,6 @@
 package com.nartan.ba.resource.service.impl;
 
-import com.nartan.ba.resource.model.Parking;
+import com.nartan.ba.resource.model.mappers.Parking;
 import com.nartan.ba.resource.repository.ParkingRepository;
 import com.nartan.ba.resource.service.ParkingService;
 import com.google.common.collect.ImmutableList;
