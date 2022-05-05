@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect} from 'react-router';
+import { Navigate} from 'react-router';
 import { withTranslation } from 'react-i18next';
 import { Navbar,  NavbarText, NavLink, Container, Row} from 'reactstrap';
 import AppNavbar from './app-navbar';
@@ -22,7 +22,7 @@ class UserPage extends Component {
 
   renderRedirect = () => {
     if (!AuthenticationService.getCurrentUser()) {
-      return <Redirect to='/' />
+      return <Navigate to='/' />
     }
   }
 

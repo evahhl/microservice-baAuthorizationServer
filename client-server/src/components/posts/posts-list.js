@@ -38,7 +38,7 @@ class PostsList extends Component {
     var totalPages = this.state.totalPages;
     const orderBy = this.state.orderBy;
     console.log('totalPages' + totalPages);
-    if (totalPages == 1) {
+    if (totalPages === 1) {
       $('#showMorePosts').hide();
     } else {
       this.getPostsList(pageNumber, pageSize, orderBy);
@@ -257,7 +257,7 @@ class PostsList extends Component {
                     {new Intl.DateTimeFormat('en-US').format(new Date(comments.dateCreated))}
                   </div>
                   <div>
-                    {comments.userId ==  user.userInfo.userId &&
+                    {comments.userId ===  user.userInfo.userId &&
                       <Button className="comments" onClick={() => this.onDeleteComment(item.id, comments.id)}><BsX /> </Button>
                     }  
                     </div>

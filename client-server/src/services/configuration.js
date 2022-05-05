@@ -1,7 +1,7 @@
 class Configuration {
 
-    SECURITY_SERVER = "http://localhost:2220/";
-    ADMIN_SERVER = "http://localhost:2222/";
+    SECURITY_SERVER = "http://localhost:8083/auth/realms/nartan-ba";
+    ADMIN_SERVER = "http://localhost:8081/";
     POST_SERVER = "http://localhost:2223/v1/post/";
 
     //LOGIN

@@ -1,5 +1,5 @@
 {
-  "name": "building-admin",
+  "name": "nartan-ba",
   "version": "1",
   "private": true,
   "dependencies": {
@@ -20,9 +20,11 @@
     "react-dom": "^17.0.2",
     "react-i18next": "^11.12.0",
     "react-icons": "^4.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^5.3.1",
+    "react-scripts": "^5.0.1",
     "reactstrap": "^8.9.0",
+    "resolve-url": "^0.2.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -51,7 +53,7 @@
   },
   "description": "Administration for Buildings",
   "main": "index.js",
-  "repository": "https://github.com/evahhl/building-admin.git",
+  "repository": "https://github.com/evahhl/nartan-ba.git",
   "author": "evahhl",
   "license": "MIT"
 }
