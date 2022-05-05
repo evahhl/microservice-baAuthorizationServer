@@ -1,5 +1,7 @@
 package com.nartan.ba.resource.model.mappers;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -14,12 +16,14 @@ public class State extends DateBase {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false, unique = true)
     protected int id;
 
     @Column(name = "state_name", nullable = false, unique = true)
     protected String stateName;
 
+    @JsonIgnore
     @Column(name = "status", nullable = false, length = 1, columnDefinition = "int default 1")
     protected int status;
 

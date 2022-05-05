@@ -7,18 +7,18 @@ CREATE TABLE public.zip_code
     id BIGSERIAL NOT NULL,
     zip_code character varying(5)  NOT NULL,
     neighborhood character varying(80)  NOT NULL,
-    municipality_id integer NOT NULL,
+    city_id integer NOT NULL,
     state_id integer NOT NULL,
     country_id integer NOT NULL,
     status integer DEFAULT 1,
     CONSTRAINT zip_code_pk PRIMARY KEY (id),
-    CONSTRAINT zip_code_uk UNIQUE (zip_code, neighborhood, municipality_id, state_id, country_id),
+    CONSTRAINT zip_code_uk UNIQUE (zip_code, neighborhood, city_id, state_id, country_id),
     CONSTRAINT zip_code_country_fk FOREIGN KEY (country_id)
     REFERENCES public.country (id) MATCH SIMPLE
                            ON UPDATE NO ACTION
                            ON DELETE NO ACTION,
-    CONSTRAINT zip_code_municipality_fk FOREIGN KEY (municipality_id)
-    REFERENCES public.municipality (id) MATCH SIMPLE
+    CONSTRAINT zip_code_city_fk FOREIGN KEY (city_id)
+    REFERENCES public.city (id) MATCH SIMPLE
                            ON UPDATE NO ACTION
                            ON DELETE NO ACTION,
     CONSTRAINT zip_code_state_fk FOREIGN KEY (state_id)

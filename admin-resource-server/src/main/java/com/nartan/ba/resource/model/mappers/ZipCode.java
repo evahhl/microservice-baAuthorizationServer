@@ -14,6 +14,7 @@ public class ZipCode extends DateBase {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     protected int id;
 
@@ -27,8 +28,8 @@ public class ZipCode extends DateBase {
     protected int status;
 
     @OneToOne
-    @JoinColumn(name = "municipality_id", referencedColumnName = "id", nullable = false)
-    private Municipality municipality;
+    @JoinColumn(name = "city_id", referencedColumnName = "id", nullable = false)
+    private City city;
 
     @OneToOne
     @JoinColumn(name = "state_id", referencedColumnName = "id", nullable = false)
@@ -65,12 +66,12 @@ public class ZipCode extends DateBase {
         this.neighborhood = neighborhood;
     }
 
-    public Municipality getMunicipality() {
-        return municipality;
+    public City getMunicipality() {
+        return city;
     }
 
-    public void setMunicipality(Municipality municipality) {
-        this.municipality = municipality;
+    public void setMunicipality(City city) {
+        this.city = city;
     }
 
     public State getState() {
@@ -102,7 +103,7 @@ public class ZipCode extends DateBase {
     public String toString() {
         return "ZipCode [id=" + id + ", zipCode=" + zipCode + ", neighborhood="
                 + neighborhood
-                + ", municipality=" + municipality + ", state=" + state + ", country=" + country
+                + ", city=" + city + ", state=" + state + ", country=" + country
                 + ", status=" + status + ", creationTime=" + getCreationTime() + ", modificationTime=" + getModificationTime()
                 + "]";
     }

@@ -1,56 +1,33 @@
-package com.nartan.ba.resource.model.mappers;
+package com.nartan.ba.resource.model;
 
-import javax.persistence.*;
+import com.nartan.ba.resource.model.mappers.Country;
+import com.nartan.ba.resource.model.mappers.DateBase;
+import com.nartan.ba.resource.model.mappers.City;
+import com.nartan.ba.resource.model.mappers.State;
 
-
-/**
- * Persistent Address entity with JPA markup. Address are stored in an relational database.
- *
- * @author Eva Hernandez
- */
-@Entity
-@Table(name = "address")
-public class Address extends DateBase {
+public class AddressResponse extends DateBase {
 
     private static final long serialVersionUID = 1L;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false, unique = true)
     protected int id;
 
-    @Column(name = "street_name", nullable = false)
     protected String streetName;
 
-    @Column(name = "ext_number", nullable = false)
     protected String extNumber;
 
-    @Column(name = "int_number")
     protected String intNumber;
 
-    @Column(name = "neighborhood", nullable = false)
     protected String neighborhood;
-    
-   /* @OneToOne	
-    @JoinColumn(name = "zip_code", referencedColumnName = "zip_code", nullable = false)
-    private ZipCode zipCode;*/
 
-    @Column(name = "zip_code")
     protected String zipCode;
 
-    @OneToOne
-    @JoinColumn(name = "city_id", referencedColumnName = "id", nullable = false)
     private City city;
 
-    @OneToOne
-    @JoinColumn(name = "state_id", referencedColumnName = "id", nullable = false)
     private State state;
 
-    @OneToOne
-    @JoinColumn(name = "country_id", referencedColumnName = "id", nullable = false)
     private Country country;
 
-    public Address() {
+    public AddressResponse() {
     }
 
     public int getId() {
@@ -73,7 +50,7 @@ public class Address extends DateBase {
         return extNumber;
     }
 
-    public void setExtNumber(String extNumber) {
+    public void setExtNumber(String exteriorNumber) {
         this.extNumber = extNumber;
     }
 

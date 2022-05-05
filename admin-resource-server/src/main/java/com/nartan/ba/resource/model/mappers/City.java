@@ -1,5 +1,7 @@
 package com.nartan.ba.resource.model.mappers;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 /**
@@ -9,14 +11,18 @@ import javax.persistence.*;
  * @author Eva Hernandez
  */
 @Entity
-@Table(name = "municipality")
-public class Municipality extends DateBase {
+@Table(name = "city")
+public class City extends DateBase {
 
   private static final long serialVersionUID = 1L;
 
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false, unique = true)
   protected int id;
+
+  @Column(name = "city_name", nullable = false)
+  protected String cityName;
 
   @Column(name = "municipality_name", nullable = false)
   protected String municipalityName;
@@ -24,6 +30,7 @@ public class Municipality extends DateBase {
   @Column(name = "state_id", nullable = false)
   protected int stateId;
 
+  @JsonIgnore
   @Column(name = "status", nullable = false, length = 1)
   protected int status;
 
@@ -33,6 +40,14 @@ public class Municipality extends DateBase {
 
   public void setId(int id) {
     this.id = id;
+  }
+
+  public String getCityName() {
+    return cityName;
+  }
+
+  public void setCityName(String cityName) {
+    this.cityName = cityName;
   }
 
   public String getMunicipalityName() {
@@ -61,12 +76,9 @@ public class Municipality extends DateBase {
 
   @Override
   public String toString() {
-    return "Municipality [id=" + id + ", municipalityName="
+    return "City [id=" + id + ", cityName=" + cityName + ", municipalityName="
         + municipalityName
         + ", stateId=" + stateId + ", status=" + status + ", dateCreated=" + getCreationTime()
-        + ", dateModified="
-        + getModificationTime() + "]";
+        + ", dateModified=" + getModificationTime() + "]";
   }
-
-
 }

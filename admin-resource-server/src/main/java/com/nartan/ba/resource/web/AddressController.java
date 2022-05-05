@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.Optional;
 
 /**
@@ -25,10 +26,9 @@ public class AddressController {
   public JsonResponse findAddressbyId(final @PathVariable("addressId") int addressId)  {
       final Optional<Address> address = addressService.findById(addressId);
       final JsonResponse response = new JsonResponse();
-      if(address.isPresent()){
-          response.addObject("address", address.get());
-          response.setMessage("Address retrieved successfully");
-      }
+      response.addObject("address", address.isPresent()?address.get(): new ArrayList<String>());
+      response.setMessage("Address retrieved successfully");
+
       return response;
   }
 

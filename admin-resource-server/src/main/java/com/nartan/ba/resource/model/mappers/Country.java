@@ -1,9 +1,8 @@
 package com.nartan.ba.resource.model.mappers;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 
 /**
  * Persistent country entity with JPA markup.
@@ -17,12 +16,14 @@ public class Country extends DateBase {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     protected int id;
 
     @Column(name = "country_name")
     protected String countryName;
 
+    @JsonIgnore
     @Column(name = "status", nullable = false, length = 1)
     protected int status;
 

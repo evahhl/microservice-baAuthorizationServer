@@ -11,17 +11,17 @@ public interface ZipCodeService {
 
   List<ZipCode> findAll(Pageable paging);
 
-  List<ZipCode> findbyZipCode(String zipCode);
+  List<ZipCode> findByZipCode(String zipCode);
 
-  List<ZipCode> findbyStatus(Pageable paging, int status);
+  List<ZipCode> findByStatus(Pageable paging, int status);
 
-  List<ZipCode> findbyNeighborhood(String neighborhood);
+  List<ZipCode> findByNeighborhood(String neighborhood);
 
-  List<ZipCode> findbyMunicipalityId(int municipalityId);
+  List<ZipCode> findByCityId(int cityId);
 
-  List<ZipCode> findbyStateId(int stateId);
+  List<ZipCode> findByStateId(int stateId);
 
-  List<ZipCode> findbyCountryId(int countryId);
+  List<ZipCode> findByCountryId(int countryId);
 
   void addZipCode(ZipCode zipcode);
 

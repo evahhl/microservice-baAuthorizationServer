@@ -10,17 +10,10 @@ CREATE TABLE public.address
     int_number character varying(20),
     neighborhood character varying(80) NOT NULL,
     zip_code character varying(5)  NOT NULL,
-    municipality_id integer NOT NULL,
     city_id integer NOT NULL,
     state_id integer NOT NULL,
     country_id integer NOT NULL,
     CONSTRAINT address_pk PRIMARY KEY (id),
-    CONSTRAINT address_municipality_fk FOREIGN KEY (municipality_id)
-        REFERENCES public.municipality(id)
-    MATCH SIMPLE
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-    NOT DEFERRABLE,
     CONSTRAINT address_city_fk FOREIGN KEY (city_id)
         REFERENCES public.city(id)
         MATCH SIMPLE

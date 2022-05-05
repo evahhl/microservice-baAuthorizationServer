@@ -36,42 +36,42 @@ public class ZipCodeController {
   }
 
   @GetMapping("/findbyZipCode/{zipCode}")
-  public List<ZipCode> findbyZipCode(@PathVariable("zipCode") String zipCode) {
+  public List<ZipCode> findByZipCode(@PathVariable("zipCode") String zipCode) {
 
-    return zipCodeService.findbyZipCode(zipCode);
+    return zipCodeService.findByZipCode(zipCode);
   }
 
   @GetMapping("/findbyStatus/{status}")
-  public List<ZipCode> findbyStatus(
+  public List<ZipCode> findByStatus(
       @RequestParam(defaultValue = "0") Integer pageNo,
       @RequestParam(defaultValue = "10") Integer pageSize,
       @PathVariable("status") int status) {
 
     Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by("zipCode"));
 
-    List<ZipCode> zipCodes = zipCodeService.findbyStatus(paging, status);
+    List<ZipCode> zipCodes = zipCodeService.findByStatus(paging, status);
 
     return zipCodes;
   }
 
   @GetMapping("/findbyNeighborhood/{neighborhood}")
-  public List<ZipCode> findbyNeighborhood(@PathVariable("neighborhood") String neighborhood) {
-    return zipCodeService.findbyNeighborhood(neighborhood);
+  public List<ZipCode> findByNeighborhood(@PathVariable("neighborhood") String neighborhood) {
+    return zipCodeService.findByNeighborhood(neighborhood);
   }
 
   @GetMapping("/findbyMunicipalityId/{municipalityId}")
-  public List<ZipCode> findbyMunicipalityId(@PathVariable("municipalityId") int municipalityId) {
-    return zipCodeService.findbyMunicipalityId(municipalityId);
+  public List<ZipCode> findByCityId(@PathVariable("cityId") int cityId) {
+    return zipCodeService.findByCityId(cityId);
   }
 
   @GetMapping("/findbyStateId/{stateId}")
-  public List<ZipCode> findbyStateId(@PathVariable("stateId") int stateId) {
-    return zipCodeService.findbyStateId(stateId);
+  public List<ZipCode> findByStateId(@PathVariable("stateId") int stateId) {
+    return zipCodeService.findByStateId(stateId);
   }
 
   @GetMapping("/findbyCountryId/{countryId}")
-  public List<ZipCode> findbyCountryId(@PathVariable("countryId") int countryId) {
-    return zipCodeService.findbyCountryId(countryId);
+  public List<ZipCode> findByCountryId(@PathVariable("countryId") int countryId) {
+    return zipCodeService.findByCountryId(countryId);
   }
 
 
