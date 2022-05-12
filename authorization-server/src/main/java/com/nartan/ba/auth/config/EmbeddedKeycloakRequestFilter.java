@@ -8,6 +8,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
 
 public class EmbeddedKeycloakRequestFilter extends AbstractRequestFilter implements Filter {
@@ -19,7 +20,12 @@ public class EmbeddedKeycloakRequestFilter extends AbstractRequestFilter impleme
 
         filter(clientConnection, (session) -> {
             try {
-                filterChain.doFilter(servletRequest, servletResponse);
+                HttpServletResponse response = (HttpServletResponse) servletResponse;
+                response.setHeader("Access-Control-Allow-Origin", "*");
+                response.setHeader("Access-Control-Allow-Methods", "POST,GET");
+                response.setHeader("Access-Control-Max-Age", "3600");
+                response.setHeader("Access-Control-Allow-Headers", "*");
+                filterChain.doFilter(servletRequest, response);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
